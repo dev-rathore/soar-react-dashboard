@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@layer base {
+  :root {
+    --accent: #f5f7fa;
+    --accent-100: #718ebf;
+    --accent-200: #8ba3cb;
+    --accent-300: #e6eff5;
+    --app-blue: #396aff;
+    --app-black: #232323;
+    --app-dark: #343c6a;
+    --app-gray: #f5f7fa;
+    --app-gray-100: #b1b1b1;
+    --app-gray-200: #dfeaf2;
+    --app-gray-300: #f4f5f7;
+  }
+}
