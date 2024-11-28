@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import SearchInput from '../search-input';
-import { Bell, Settings } from 'lucide-react';
+import { Bell, Search, Settings } from 'lucide-react';
 import { formatUrlToText } from '../../../utils/text';
 import IconButton from '../icon-button';
 
@@ -22,6 +22,9 @@ const Header: React.FC<HeaderProps> = ({
 
       <div className="flex items-center space-x-6">
         <SearchInput
+          icon={
+            <Search className="w-5 h-5 text-accent-200" />
+          }
           placeholder="Search for something"
           aria-label="Search"
         />

@@ -1,41 +1,52 @@
-import { Search } from 'lucide-react';
+import { cn } from '../../../utils/tailwind';
 
 interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  action?: () => void;
+  actionLabel?: string | React.ReactNode;
   className?: string;
-  iconClassName?: string;
   containerClassName?: string;
+  icon?: React.ReactNode;
+  iconClassName?: string;
 }
 
 const SearchInput: React.FC<SearchInputProps> = ({
+  action,
+  actionLabel,
   className = "",
-  iconClassName = "",
   containerClassName = "",
+  icon,
+  iconClassName = "",
   ...props
 }) => {
   return (
-    <div className={`relative ${containerClassName}`}>
-      <Search
-        className={`absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-accent-200 ${iconClassName}`}
-      />
+    <div className={`relative flex ${containerClassName}`}>
+      {
+        icon && (
+          <div className="absolute left-4 top-1/2 -translate-y-1/2 text-accent-200">
+            {icon}
+          </div>
+        )
+      }
       <input
         type="search"
-        className={`
-          w-full
-          bg-accent
-          rounded-full
-          py-3
-          pl-12
-          pr-4
-          text-base
-          placeholder:text-accent-100
-          focus:outline-none
-          focus:ring-2
-          focus:ring-blue-200
-          transition-shadow
-          ${className}
-        `}
+        className={cn(
+          'w-full bg-accent rounded-full py-3 text-base placeholder:text-accent-100 focus:outline-none focus:ring-2 focus:ring-blue-200 transition-shadow',
+          icon ? 'pl-12' : 'pl-6',
+          action && actionLabel ? 'pr-16' : 'pr-6',
+          className,
+        )}
         {...props}
       />
+      {
+        action && actionLabel && (
+          <button
+            className="-ml-14 px-8 py-3 bg-app-black text-white rounded-[50px] flex items-center gap-3 hover:bg-gray-700 transition-colors"
+            onClick={action}
+          >
+            {actionLabel}
+          </button>
+        )
+      }
     </div>
   );
 }
