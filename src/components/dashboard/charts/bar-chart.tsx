@@ -7,6 +7,7 @@ import {
   Title,
   Tooltip,
 } from 'chart.js';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 import { Bar } from 'react-chartjs-2';
 import { useIsMobile } from '../../../hooks/use-mobile';
@@ -18,6 +19,7 @@ ChartJS.register(
   LinearScale,
   Title,
   Tooltip,
+  ChartDataLabels,
 );
 
 const options = {
@@ -29,11 +31,11 @@ const options = {
         usePointStyle: true,
       },
     },
+    datalabels: {
+      display: false,
+    },
   },
   maintainAspectRatio: false,
-  datalabels: {
-    display: false,
-  },
   layout: {
     padding: {
       left: 10,

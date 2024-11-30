@@ -9,6 +9,7 @@ import {
   Title,
   Tooltip,
 } from 'chart.js';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 import { Line } from 'react-chartjs-2';
 import { getGradient } from '../../../utils/chart';
@@ -22,12 +23,16 @@ ChartJS.register(
   PointElement,
   Title,
   Tooltip,
+  ChartDataLabels,
 );
 
 const options = {
   aspectRatio: 1.5,
   plugins: {
     legend: {
+      display: false,
+    },
+    datalabels: {
       display: false,
     },
   },
@@ -40,9 +45,6 @@ const options = {
     },
   },
   maintainAspectRatio: false,
-  datalabels: {
-    display: false,
-  },
   scales: {
     x: {
       grid: {
