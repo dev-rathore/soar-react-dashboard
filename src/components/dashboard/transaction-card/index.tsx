@@ -59,7 +59,7 @@ const TransactionCard: React.FC<TransactionCardProps> = ({
   }
 
   return (
-    <div className="bg-white rounded-3xl p-6 w-full max-w-md shadow-sm">
+    <div className="max-h-[252px] flex flex-col overflow-y-auto bg-white rounded-3xl p-6 w-full max-w-md shadow-sm">
       <div className="space-y-5">
         {transactions.map((transaction, index) => (
           <div key={index} className="flex items-center justify-between">

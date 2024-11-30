@@ -23,6 +23,7 @@ const options = {
   plugins: {
     legend: {
       align: 'end' as const,
+      reverse: true,
       labels: {
         usePointStyle: true,
       },

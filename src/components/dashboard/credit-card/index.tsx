@@ -23,7 +23,7 @@ const CreditCard: React.FC<CreditCardProps> = ({
   return (
     <div
       className={cn(
-        'flex-1 rounded-[28px] bg-gradient-to-r from-[#5B5A6F] to-[#000000] text-white',
+        'min-w-[448px] rounded-[28px] bg-gradient-to-r from-[#5B5A6F] to-[#000000] text-white',
         variant === 'secondary' && 'bg-gradient-to-b from-white to-white text-app-dark border border-app-gray-200',
       )}
     >

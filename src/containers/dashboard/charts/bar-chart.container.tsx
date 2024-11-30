@@ -5,12 +5,12 @@ const BarChartContainer: React.FC = () => {
     <BarChart
       data={[
         {
-          label: 'Deposit',
-          values: [480, 350, 325, 480, 150, 390, 400], // Deposit data
+          label: 'Withdraw',
+          values: [480, 350, 325, 480, 150, 390, 400], // Withdraw data
         },
         {
-          label: 'Withdraw',
-          values: [240, 140, 270, 370, 250, 250, 330], // Withdraw data
+          label: 'Deposit',
+          values: [240, 140, 270, 370, 250, 250, 330], // Deposit data
         },
       ]}
       labels={['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri']}
