@@ -3,6 +3,7 @@ import PieChartContainer from "./charts/pie-chart.container";
 import LineChartContainer from "./charts/line-chart.container";
 import CreditCardContainer from "./credit-card-container";
 import TransactionCardContainer from "./transaction-card-container";
+import QuickTransferContainer from "./quick-transfer-container";
 
 export {
   BarChartContainer,
@@ -10,4 +11,5 @@ export {
   LineChartContainer,
   CreditCardContainer,
   TransactionCardContainer,
+  QuickTransferContainer,
 };
