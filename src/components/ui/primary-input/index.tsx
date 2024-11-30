@@ -1,6 +1,6 @@
 import { cn } from '../../../utils/tailwind';
 
-interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface PrimaryInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   action?: () => void;
   actionLabel?: string | React.ReactNode;
   className?: string;
@@ -9,7 +9,7 @@ interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   iconClassName?: string;
 }
 
-const SearchInput: React.FC<SearchInputProps> = ({
+const PrimaryInput: React.FC<PrimaryInputProps> = ({
   action,
   actionLabel,
   className = "",
@@ -28,7 +28,6 @@ const SearchInput: React.FC<SearchInputProps> = ({
         )
       }
       <input
-        type="search"
         className={cn(
           'w-full bg-accent rounded-full py-3 text-base placeholder:text-accent-100 focus:outline-none focus:ring-2 focus:ring-blue-200 transition-shadow',
           icon ? 'pl-12' : 'pl-6',
@@ -51,4 +50,4 @@ const SearchInput: React.FC<SearchInputProps> = ({
   );
 }
 
-export default SearchInput;
+export default PrimaryInput;

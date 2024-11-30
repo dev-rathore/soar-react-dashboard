@@ -1,8 +1,8 @@
-import { useLocation } from 'react-router-dom';
-import SearchInput from '../search-input';
+import { Link, useLocation } from 'react-router-dom';
 import { Bell, Search, Settings } from 'lucide-react';
 import { formatUrlToText } from '../../../utils/text';
 import IconButton from '../icon-button';
+import PrimaryInput from '../primary-input';
 
 interface HeaderProps {
   className?: string;
@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({
       </h1>
 
       <div className="flex items-center space-x-6">
-        <SearchInput
+        <PrimaryInput
           icon={
             <Search className="w-5 h-5 text-accent-200" />
           }
@@ -29,14 +29,16 @@ const Header: React.FC<HeaderProps> = ({
           aria-label="Search"
         />
 
-        <IconButton
-          aria-label="Settings"
-        >
-          <Settings className="w-6 h-6" />
-        </IconButton>
+        <Link to="/setting">
+          <IconButton
+            aria-label="Settings"
+          >
+            <Settings className="w-6 h-6" />
+          </IconButton>
+        </Link>
 
         <IconButton
-          variant='secondary'
+          iconColor='text-app-blue'
           aria-label="Notifications"
         >
           <Bell className="w-6 h-6" />

@@ -21,5 +21,9 @@
     --app-gray-100: #b1b1b1;
     --app-gray-200: #dfeaf2;
     --app-gray-300: #f4f5f7;
+    --white-0: rgba(255, 255, 255, 0);
+    --white-15: rgba(255, 255, 255, 0.15);
+    --app-red: #ff4b4a;
+    --app-green: #41d4a8;
   }
 }

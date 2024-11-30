@@ -1,21 +1,25 @@
+import Button from "./button";
 import Card from "./card";
 import CardLabel from "./card/card-label";
-import SearchInput from "./search-input";
-import Sidebar from "./sidebar";
+import Error from "./error";
 import Header from "./header";
-import Tabs from "./tabs";
 import Input from "./input";
 import Label from "./label";
-import Button from "./button";
+import Modal from "./modal";
+import PrimaryInput from "./primary-input";
+import Sidebar from "./sidebar";
+import Tabs from "./tabs";
 
 export {
+  Button,
   Card,
   CardLabel,
-  SearchInput,
-  Sidebar,
+  Error,
   Header,
-  Tabs,
   Input,
   Label,
-  Button,
+  Modal,
+  PrimaryInput,
+  Sidebar,
+  Tabs,
 };

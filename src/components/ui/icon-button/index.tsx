@@ -3,9 +3,11 @@ import { cn } from "../../../utils/tailwind";
 
 interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary";
+  iconColor?: string;
 }
 
 const IconButton: React.FC<IconButtonProps> = ({
+  iconColor = "text-accent-100",
   variant = "primary",
   children,
   className = "",
@@ -15,7 +17,8 @@ const IconButton: React.FC<IconButtonProps> = ({
     <button
       className={cn(
         `flex items-center justify-center rounded-full bg-accent p-3 ${className}`,
-        variant === "primary" ? "text-accent-100" : "text-app-blue"
+        iconColor,
+        variant === "secondary" && "w-12 h-12 bg-white rounded-full shadow-icon hover:bg-gray-50 transition-colors"
       )}
       {...props}
     >
