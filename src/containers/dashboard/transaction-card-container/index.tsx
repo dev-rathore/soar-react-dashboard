@@ -1,46 +1,32 @@
+import { useDispatch, useSelector } from "react-redux";
 import { TransactionCard } from "../../../components/dashboard";
+import { AppDispatch, RootState } from "../../../store/store";
+import { useEffect } from "react";
+import { fetchTransactions } from "../../../store/transaction/thunk";
 
 const TransactionCardContainer: React.FC = () => {
-  const transactions = [
-    {
-      icon: 'card' as const,
-      title: 'Deposit from my Card',
-      date: new Date('28 January 2021'),
-      amount: -850,
-    },
-    {
-      icon: 'paypal' as const,
-      title: 'Deposit Paypal',
-      date: new Date('25 January 2021'),
-      amount: 2500,
-    },
-    {
-      icon: 'dollar' as const,
-      title: 'Jemi Wilson',
-      date: new Date('21 January 2021'),
-      amount: 5400,
-    },
-    {
-      icon: 'paypal' as const,
-      title: 'Deposit Paypal',
-      date: new Date('15 January 2021'),
-      amount: 500,
-    },
-    {
-      icon: 'dollar' as const,
-      title: 'Jemi Wilson',
-      date: new Date('12 January 2021'),
-      amount: 1400,
-    },
-    {
-      icon: 'card' as const,
-      title: 'Deposit from my Card',
-      date: new Date('18 January 2021'),
-      amount: -450,
-    },
-  ];
+  const dispatch: AppDispatch = useDispatch();
+  const { transactions, status } = useSelector((state: RootState) => state.transaction);
 
-  return <TransactionCard transactions={transactions} />
+  useEffect(() => {
+    if (status === "idle") {
+      dispatch(fetchTransactions());
+    }
+  }, [dispatch, status]);
+
+  if (status === "loading") return (
+    <div>
+      Loading...
+    </div>
+  );
+
+  if (status === "failed") return (
+    <div>Error fetching transactions</div>
+  );
+
+  if (!transactions) return null;
+
+  return <TransactionCard transactions={transactions} />;
 };
 
 export default TransactionCardContainer;

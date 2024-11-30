@@ -64,7 +64,7 @@ const EditProfile: React.FC<EditProfileProps> = ({
         permanent: user?.address?.permanent,
         present: user?.address?.present,
       },
-      dob: new Date(user?.dob).toLocaleDateString("en-US"),
+      dob: user?.dob,
       email: user?.email,
       name: user?.name,
       password: user?.password,

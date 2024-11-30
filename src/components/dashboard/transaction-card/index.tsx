@@ -5,7 +5,7 @@ import paypal from '../../../assets/icons/paypal-payment.svg';
 import creditCard from '../../../assets/icons/card.svg';
 
 interface Transaction {
-  icon: 'card' | 'paypal' | 'dollar';
+  icon: string;
   title: string;
   date: Date;
   amount: number;
@@ -59,7 +59,7 @@ const TransactionCard: React.FC<TransactionCardProps> = ({
   }
 
   return (
-    <div className="max-h-[252px] flex flex-col overflow-y-auto bg-white rounded-3xl p-6 w-full max-w-md shadow-sm">
+    <div className="max-h-[236px] sm:max-h-[252px] flex flex-col overflow-y-auto bg-white rounded-3xl px-2 py-4 sm:p-6 w-full sm:shadow-sm">
       <div className="space-y-5">
         {transactions.map((transaction, index) => (
           <div key={index} className="flex items-center justify-between">

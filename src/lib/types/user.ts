@@ -4,13 +4,11 @@ export type User = {
     permanent: string;
     present: string;
   };
-  createdAt: Date;
-  dob: Date;
+  dob: string;
   email: string;
   id: string;
   name: string;
   password: string;
   profileImage: string;
-  updatedAt: Date;
   username: string;
 };
