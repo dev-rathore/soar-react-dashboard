@@ -32,7 +32,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         <span>Soar Task</span>
       </div>
       <nav className="flex-1">
-        <ul className="space-y-3 py-4 px-8">
+        <ul className="space-y-3 py-4">
           {MENU_ITEMS.map((item) => (
             <SidebarItem key={item.name} item={item} />
           ))}

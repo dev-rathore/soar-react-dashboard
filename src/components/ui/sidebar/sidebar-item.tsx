@@ -1,4 +1,5 @@
 import { NavLink, useLocation } from 'react-router-dom';
+import { cn } from '../../../utils/tailwind';
 
 interface SidebarItemProps {
   item: {
@@ -15,7 +16,18 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
   const isActive = pathname === item.path;
 
   return (
-    <li key={item.name}>
+    <li
+      key={item.name}
+      className={cn(
+        'relative px-8',
+      )}
+    >
+      <div
+        className={cn(
+          'absolute top-0 left-0 w-[5px] h-full rounded-r-2xl',
+          isActive ? 'bg-app-dark' : 'bg-transparent',
+        )}
+      />
       <NavLink
         to={item.path}
         className={({ isActive }) =>
