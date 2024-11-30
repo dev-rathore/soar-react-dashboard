@@ -17,7 +17,7 @@ const BarChartContainer: React.FC = () => {
 
   if (status.weeklyActivity === "loading") return (
     <Shimmer
-      className="h-80 w-full"
+      className="h-[420px] w-full"
     />
   );
 

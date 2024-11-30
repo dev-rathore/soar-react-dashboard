@@ -23,6 +23,6 @@ export const fetchCards = createAsyncThunk("chart/fetchCards", async () => {
         validThru: "12/22",
       },
     ],
-    2000
+    500
   );
 });

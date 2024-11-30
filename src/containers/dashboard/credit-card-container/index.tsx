@@ -17,7 +17,7 @@ const CreditCardContainer: React.FC = () => {
 
   if (status === "loading") return (
     <Shimmer
-      className="h-72 w-full"
+      className="h-[260px] w-full"
     />
   );
 

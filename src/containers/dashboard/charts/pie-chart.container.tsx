@@ -17,7 +17,7 @@ const PieChartContainer: React.FC = () => {
 
   if (status.expenseStatistics === "loading") return (
     <Shimmer
-      className="h-[360px] w-full"
+      className="h-[420px] w-full"
     />
   );
 

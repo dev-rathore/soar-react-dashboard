@@ -43,7 +43,7 @@ export const fetchTransactions = createAsyncThunk(
           amount: -450,
         },
       ],
-      2000
+      500
     );
   }
 );
