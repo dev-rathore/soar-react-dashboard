@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { store } from './store/store';
-import { Dashboard } from './pages';
+import { Dashboard, FourZeroFour } from './pages';
 
 const App = () => {
   return (
@@ -11,6 +11,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/*" element={<Dashboard />} />
+          <Route path="/404" element={<FourZeroFour />} />
         </Routes>
         <ToastContainer
           position="bottom-right"

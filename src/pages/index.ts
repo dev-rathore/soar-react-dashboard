@@ -8,6 +8,7 @@ import Privileges from "./privileges";
 import Services from "./services";
 import Setting from "./setting";
 import Transactions from "./transactions";
+import FourZeroFour from "./four-zero-four";
 
 export {
   Accounts,
@@ -20,4 +21,5 @@ export {
   Services,
   Setting,
   Transactions,
+  FourZeroFour,
 };

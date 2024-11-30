@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import {
   DashboardLayout,
@@ -28,6 +28,9 @@ const Dashboard = () => {
         <Route path="services" element={<Services />} />
         <Route path="privileges" element={<Privileges />} />
         <Route path="setting" element={<Setting />} />
+        <Route path="*" element={
+          <Navigate to="/404" />
+        } />
       </Routes>
       <Outlet />
     </DashboardLayout>
