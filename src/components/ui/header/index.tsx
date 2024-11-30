@@ -99,7 +99,7 @@ const Header: React.FC<HeaderProps> = ({
             aria-label="User profile"
           >
             <img
-              src="https://randomuser.me/api/portraits/men/10.jpg"
+              src={user?.profileImage}
               alt="User profile"
               className="w-14 h-14 rounded-full object-cover"
             />
