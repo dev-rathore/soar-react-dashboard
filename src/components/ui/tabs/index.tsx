@@ -24,7 +24,7 @@ const Tabs: React.FC<TabsProps> = ({
   return (
     <div className={className}>
       <div className="flex border-b border-app-gray-300">
-        <div className="flex space-x-12">
+        <div className="flex space-x-0 md:space-x-12">
           {tabs.map((tab, index) => (
             <button
               className={`pb-3 px-3 text-base transition-colors relative ${activeTab === index

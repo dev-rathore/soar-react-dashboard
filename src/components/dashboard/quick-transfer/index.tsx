@@ -78,7 +78,7 @@ const QuickTransfer: React.FC<QuickTransferProps> = ({
   }, [startIndex])
 
   return (
-    <div className="overflow-x-hidden relative">
+    <div className="overflow-x-hidden sm:overflow-x-visible relative pb-2">
       <div
         className={cn(
           `flex justify-center mb-8 relative transition-all duration-300 ease-in-out`,

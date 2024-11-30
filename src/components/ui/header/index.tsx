@@ -6,6 +6,10 @@ import PrimaryInput from '../primary-input';
 import Button from '../button';
 import { cn } from '../../../utils/tailwind';
 import hamBurgerSrc from '../../../assets/icons/hamburger.svg';
+import { AppDispatch, RootState } from '../../../store/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchUserById } from '../../../store/user/thunk';
 
 interface HeaderProps {
   className?: string;
@@ -18,6 +22,15 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   const location = useLocation();
   const pageTitle = location.pathname === '/' ? 'Overview' : location.pathname.split('/')[1];
+
+  const dispatch: AppDispatch = useDispatch();
+  const { user, status } = useSelector((state: RootState) => state.user);
+
+  useEffect(() => {
+    if (status === "idle") {
+      dispatch(fetchUserById('1'));
+    }
+  }, [dispatch, status]);
 
   return (
     <header
@@ -59,7 +72,7 @@ const Header: React.FC<HeaderProps> = ({
             aria-label="User profile"
           >
             <img
-              src="https://randomuser.me/api/portraits/men/10.jpg"
+              src={user?.profileImage}
               alt="User profile"
               className="w-14 h-14 rounded-full object-cover"
             />

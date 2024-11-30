@@ -3,6 +3,7 @@ import { BarChart } from "../../../components/dashboard";
 import { fetchWeeklyActivity } from "../../../store/chart/thunk";
 import { AppDispatch, RootState } from "../../../store/store";
 import { Suspense, useEffect } from "react";
+import { Card, Shimmer } from "../../../components/ui";
 
 const BarChartContainer: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -15,9 +16,9 @@ const BarChartContainer: React.FC = () => {
   }, [dispatch, status.weeklyActivity]);
 
   if (status.weeklyActivity === "loading") return (
-    <div>
-      Loading...
-    </div>
+    <Shimmer
+      className="h-80 w-full"
+    />
   );
 
   if (status.weeklyActivity === "failed") return (
@@ -27,14 +28,20 @@ const BarChartContainer: React.FC = () => {
   if (!weeklyActivity) return null;
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <BarChart
-        data={weeklyActivity.datasets.map((dataset) => ({
-          label: dataset.label,
-          values: dataset.data,
-        }))}
-        labels={weeklyActivity.labels}
+    <Suspense fallback={
+      <Shimmer
+        className="h-[360px] w-full"
       />
+    }>
+      <Card>
+        <BarChart
+          data={weeklyActivity.datasets.map((dataset) => ({
+            label: dataset.label,
+            values: dataset.data,
+          }))}
+          labels={weeklyActivity.labels}
+        />
+      </Card>
     </Suspense>
   );
 };

@@ -79,10 +79,10 @@ const EditProfile: React.FC<EditProfileProps> = ({
 
   return (
     <form
-      className="w-full flex flex-col md:flex-row items-center md:items-start gap-6"
+      className="w-full flex flex-col md:flex-row md:items-start gap-6"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <div className="flex items-center px-10">
+      <div className="flex items-center justify-center md:justify-start px-10">
         <div className="relative">
           <img
             src={profileImage}

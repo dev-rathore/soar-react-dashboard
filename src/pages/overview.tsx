@@ -1,4 +1,4 @@
-import { Card, CardLabel } from "../components/ui";
+import { CardLabel } from "../components/ui";
 import {
   BarChartContainer,
   CreditCardContainer,
@@ -34,32 +34,24 @@ const Overview: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
         <div className="col-span-1 md:col-span-2">
           <CardLabel label="Weekly Activity" />
-          <Card>
-            <BarChartContainer />
-          </Card>
+          <BarChartContainer />
         </div>
         <div className="col-span-1">
           <CardLabel label="Expense Statistics" />
-          <Card className="flex justify-center items-center">
-            <PieChartContainer />
-          </Card>
+          <PieChartContainer />
         </div>
       </div>
       <div className="flex flex-col md:flex-row gap-8">
-        <div className="w-full md:max-w-xl">
+        <div className="w-full md:max-w-md lg:max-w-xl">
           <CardLabel label="Quick Transfer" />
-          <Card>
-            <QuickTransferContainer />
-          </Card>
+          <QuickTransferContainer />
         </div>
         <div className="flex-1">
           <CardLabel label="Balance History" />
-          <Card>
-            <LineChartContainer />
-          </Card>
+          <LineChartContainer />
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   )
 };
 

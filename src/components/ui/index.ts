@@ -9,6 +9,7 @@ import Modal from "./modal";
 import PrimaryInput from "./primary-input";
 import Sidebar from "./sidebar";
 import Tabs from "./tabs";
+import Shimmer from "./shimmer";
 
 export {
   Button,
@@ -22,4 +23,5 @@ export {
   PrimaryInput,
   Sidebar,
   Tabs,
+  Shimmer,
 };

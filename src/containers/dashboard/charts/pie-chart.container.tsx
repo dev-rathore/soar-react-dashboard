@@ -3,6 +3,7 @@ import { PieChart } from "../../../components/dashboard"
 import { fetchExpenseStatistics } from "../../../store/chart/thunk";
 import { AppDispatch, RootState } from "../../../store/store";
 import { useEffect } from "react";
+import { Card, Shimmer } from "../../../components/ui";
 
 const PieChartContainer: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -15,9 +16,9 @@ const PieChartContainer: React.FC = () => {
   }, [dispatch, status.expenseStatistics]);
 
   if (status.expenseStatistics === "loading") return (
-    <div>
-      Loading...
-    </div>
+    <Shimmer
+      className="h-[360px] w-full"
+    />
   );
 
   if (status.expenseStatistics === "failed") return (
@@ -27,10 +28,12 @@ const PieChartContainer: React.FC = () => {
   if (!expenseStatistics) return null;
 
   return (
-    <PieChart
-      data={expenseStatistics.data}
-      labels={expenseStatistics.labels}
-    />
+    <Card className="flex justify-center items-center">
+      <PieChart
+        data={expenseStatistics.data}
+        labels={expenseStatistics.labels}
+      />
+    </Card>
   );
 };
 

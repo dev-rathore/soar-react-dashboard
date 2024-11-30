@@ -16,7 +16,7 @@ export const fetchUserById = createAsyncThunk(
         id,
         name: "Charlene Reed",
         password: "password",
-        profileImage: "https://randomuser.me/api/portraits/women/15.jpg",
+        profileImage: "https://randomuser.me/api/portraits/women/21.jpg",
         username: "charlenereed",
       },
       0

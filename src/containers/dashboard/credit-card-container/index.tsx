@@ -3,6 +3,7 @@ import { CreditCard } from "../../../components/dashboard"
 import { fetchCards } from "../../../store/card/thunk";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../store/store";
+import { Shimmer } from "../../../components/ui";
 
 const CreditCardContainer: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -15,9 +16,9 @@ const CreditCardContainer: React.FC = () => {
   }, [dispatch, status]);
 
   if (status === "loading") return (
-    <div>
-      Loading...
-    </div>
+    <Shimmer
+      className="h-72 w-full"
+    />
   );
 
   if (status === "failed") return (

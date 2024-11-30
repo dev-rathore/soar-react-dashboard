@@ -3,6 +3,7 @@ import { LineChart } from "../../../components/dashboard"
 import { fetchBalanceHistory } from "../../../store/chart/thunk";
 import { AppDispatch, RootState } from "../../../store/store";
 import { useEffect } from "react";
+import { Card, Shimmer } from "../../../components/ui";
 
 const LineChartContainer: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -15,9 +16,9 @@ const LineChartContainer: React.FC = () => {
   }, [dispatch, status.balanceHistory]);
 
   if (status.balanceHistory === "loading") return (
-    <div>
-      Loading...
-    </div>
+    <Shimmer
+      className="h-[360px] w-full"
+    />
   );
 
   if (status.balanceHistory === "failed") return (
@@ -27,10 +28,12 @@ const LineChartContainer: React.FC = () => {
   if (!balanceHistory) return null;
 
   return (
-    <LineChart
-      data={balanceHistory.data} // Sales data
-      labels={balanceHistory.labels} // Days of the week
-    />
+    <Card>
+      <LineChart
+        data={balanceHistory.data} // Sales data
+        labels={balanceHistory.labels} // Days of the week
+      />
+    </Card>
   );
 };
 

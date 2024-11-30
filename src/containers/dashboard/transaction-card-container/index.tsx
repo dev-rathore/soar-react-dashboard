@@ -3,6 +3,7 @@ import { TransactionCard } from "../../../components/dashboard";
 import { AppDispatch, RootState } from "../../../store/store";
 import { useEffect } from "react";
 import { fetchTransactions } from "../../../store/transaction/thunk";
+import { Shimmer } from "../../../components/ui";
 
 const TransactionCardContainer: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -15,9 +16,9 @@ const TransactionCardContainer: React.FC = () => {
   }, [dispatch, status]);
 
   if (status === "loading") return (
-    <div>
-      Loading...
-    </div>
+    <Shimmer
+      className="h-72 w-full"
+    />
   );
 
   if (status === "failed") return (

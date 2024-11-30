@@ -1,4 +1,5 @@
 import { QuickTransfer } from "../../../components/dashboard";
+import { Card } from "../../../components/ui";
 
 const QuickTransferContainer: React.FC = () => {
   const teamMembers = [
@@ -35,9 +36,11 @@ const QuickTransferContainer: React.FC = () => {
   ];
 
   return (
-    <QuickTransfer
-      data={teamMembers}
-    />
+    <Card>
+      <QuickTransfer
+        data={teamMembers}
+      />
+    </Card>
   );
 };
 
