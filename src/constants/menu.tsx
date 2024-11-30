@@ -1,56 +1,82 @@
-import HomeIcon from '../assets/icons/home.svg';
-import UserIcon from '../assets/icons/user.svg';
-import TransactionIcon from '../assets/icons/transfer.svg';
-import InvestmentIcon from '../assets/icons/economic-investment.svg';
-import LoanIcon from '../assets/icons/loan.svg';
-import ServiceIcon from '../assets/icons/service.svg';
-import PrivilegeIcon from '../assets/icons/econometrics.svg';
-import { CreditCardIcon } from '../components/icons';
-import { Cog } from 'lucide-react';
+import {
+  CogIcon,
+  CreditCardIcon,
+  HomeIcon,
+  InvestmentIcon,
+  LoanIcon,
+  PrivilegeIcon,
+  ServiceIcon,
+  TransactionIcon,
+  UserIcon,
+} from '../components/icons';
+
+type Icon = {
+  isActive: boolean;
+}
+
+const active = (isActive: boolean) => isActive ? '#232323' : '#B1B1B1';
 
 export const MENU_ITEMS = [
   {
-    icon: HomeIcon,
+    icon: ({
+      isActive,
+    }: Icon) => <HomeIcon fill={active(isActive)} />,
     name: "Dashboard",
     path: "/",
   },
   {
-    icon: TransactionIcon,
+    icon: ({
+      isActive,
+    }: Icon) => <TransactionIcon fill={active(isActive)} />,
     name: "Transactions",
     path: "/transactions",
   },
   {
-    icon: UserIcon,
+    icon: ({
+      isActive,
+    }: Icon) => <UserIcon fill={active(isActive)} />,
     name: "Accounts",
     path: "/accounts",
   },
   {
-    icon: InvestmentIcon,
+    icon: ({
+      isActive,
+    }: Icon) => <InvestmentIcon fill={active(isActive)} />,
     name: "Investments",
     path: "/investments",
   },
   {
-    icon: <CreditCardIcon />,
+    icon: ({
+      isActive,
+    }: Icon) => <CreditCardIcon fill={active(isActive)} />,
     name: "Credit Cards",
     path: "/credit-cards",
   },
   {
-    icon: LoanIcon,
+    icon: ({
+      isActive,
+    }: Icon) => <LoanIcon fill={active(isActive)} />,
     name: "Loans",
     path: "/loans",
   },
   {
-    icon: ServiceIcon,
+    icon: ({
+      isActive,
+    }: Icon) => <ServiceIcon fill={active(isActive)} />,
     name: "Services",
     path: "/services",
   },
   {
-    icon: PrivilegeIcon,
+    icon: ({
+      isActive,
+    }: Icon) => <PrivilegeIcon fill={active(isActive)} />,
     name: "My Privileges",
     path: "/privileges",
   },
   {
-    icon: <Cog size={25} />,
+    icon: ({
+      isActive,
+    }: Icon) => <CogIcon fill={active(isActive)} />,
     name: "Setting",
     path: "/setting",
   },

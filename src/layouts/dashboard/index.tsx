@@ -23,6 +23,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
           'flex lg:hidden absolute top-0 left-0 h-full transition-all bg-white shadow-lg z-50',
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full',
         )}
+        setIsSidebarOpen={setIsSidebarOpen}
       />
       <Sidebar
         className='hidden lg:flex'

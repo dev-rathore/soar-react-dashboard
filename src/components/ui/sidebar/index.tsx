@@ -6,13 +6,18 @@ import { MENU_ITEMS } from '../../../constants/menu';
 
 interface SidebarProps {
   className?: string;
+  setIsSidebarOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
   className = "",
+  setIsSidebarOpen,
 }) => {
   const onSidebarClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
+    if (setIsSidebarOpen) {
+      setIsSidebarOpen(false);
+    }
   }
 
   return (
