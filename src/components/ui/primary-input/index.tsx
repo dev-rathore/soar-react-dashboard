@@ -39,7 +39,7 @@ const PrimaryInput: React.FC<PrimaryInputProps> = ({
       {
         action && actionLabel && (
           <button
-            className="-ml-14 px-8 py-3 bg-app-black text-white rounded-[50px] flex items-center gap-3 hover:bg-gray-700 transition-colors"
+            className="-ml-14 px-6 sm:px-8 py-3 bg-app-black text-white rounded-[50px] flex items-center gap-3 hover:bg-gray-700 transition-colors"
             onClick={action}
           >
             {actionLabel}

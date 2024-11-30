@@ -1,10 +1,21 @@
 interface CardLabelProps {
+  action?: React.ReactNode;
   label: string;
 }
 
-const CardLabel: React.FC<CardLabelProps> = ({ label }) => {
+const CardLabel: React.FC<CardLabelProps> = ({
+  action,
+  label,
+}) => {
   return (
-    <h3 className="text-xl text-app-dark font-semibold mb-4">{label}</h3>
+    <div className="flex gap-4 items-start">
+      <h3
+        className="flex-1 text-xl text-app-dark font-semibold mb-4"
+      >
+        {label}
+      </h3>
+      {action}
+    </div>
   );
 };
 

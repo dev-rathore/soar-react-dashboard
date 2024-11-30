@@ -27,3 +27,14 @@
     --app-green: #41d4a8;
   }
 }
+
+canvas {
+  min-height: 360px;
+  max-height: 360px;
+}
+
+@media screen and (max-width: 768px) {
+  canvas {
+    height: 220px;
+  }
+}

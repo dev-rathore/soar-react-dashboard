@@ -9,6 +9,7 @@ import {
 } from 'chart.js';
 
 import { Bar } from 'react-chartjs-2';
+import { useIsMobile } from '../../../hooks/use-mobile';
 
 ChartJS.register(
   BarElement,
@@ -28,6 +29,10 @@ const options = {
         usePointStyle: true,
       },
     },
+  },
+  maintainAspectRatio: false,
+  datalabels: {
+    display: false,
   },
   layout: {
     padding: {
@@ -79,12 +84,14 @@ const BarChart: React.FC<BarChartProps> = ({
   data,
   labels,
 }) => {
+  const isMobile = useIsMobile();
+
   const barChartData = {
     labels,
     datasets: [{
       label: data[0].label,
       backgroundColor: '#232323',
-      barThickness: 30,
+      barThickness: isMobile ? 15 : 25,
       base: 2,
       borderColor: '#ffffff',
       borderRadius: 25,
@@ -95,7 +102,7 @@ const BarChart: React.FC<BarChartProps> = ({
     }, {
       label: data[1].label,
       backgroundColor: '#396AFF',
-      barThickness: 30,
+      barThickness: isMobile ? 15 : 25,
       base: 2,
       borderColor: '#ffffff',
       borderRadius: 25,

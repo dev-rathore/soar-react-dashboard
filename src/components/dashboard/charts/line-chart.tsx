@@ -25,7 +25,6 @@ ChartJS.register(
 );
 
 const options = {
-  responsive: true,
   aspectRatio: 1.5,
   plugins: {
     legend: {
@@ -39,6 +38,10 @@ const options = {
       top: 10,
       bottom: 10,
     },
+  },
+  maintainAspectRatio: false,
+  datalabels: {
+    display: false,
   },
   scales: {
     x: {

@@ -11,11 +11,11 @@ import { Pie } from 'react-chartjs-2';
 ChartJS.register(ArcElement, Legend, Tooltip, ChartDataLabels);
 
 const options = {
-  responsive: true,
   plugins: {
     legend: {
       display: false,
     },
+    maintainAspectRatio: false,
     datalabels: {
       display: true,
       align: 'center' as const,

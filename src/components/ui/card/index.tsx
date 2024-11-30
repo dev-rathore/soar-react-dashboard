@@ -9,7 +9,7 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <div
-      className={`w-full flex-1 bg-white rounded-2xl md:rounded-3xl shadow-sm p-8 ${className}`}
+      className={`w-full flex-1 bg-white rounded-2xl md:rounded-3xl sm:shadow-sm px-0 py-0 sm:py-8 sm:p-8 ${className}`}
     >
       {children}
     </div>

@@ -78,7 +78,7 @@ const QuickTransfer: React.FC<QuickTransferProps> = ({
   }, [startIndex])
 
   return (
-    <div className="relative">
+    <div className="overflow-x-hidden relative">
       <div
         className={cn(
           `flex justify-center mb-8 relative transition-all duration-300 ease-in-out`,
@@ -90,7 +90,7 @@ const QuickTransfer: React.FC<QuickTransferProps> = ({
           <IconButton
             variant='secondary'
             onClick={() => handleSlide('left')}
-            className="absolute z-10 left-0 top-1/2 -translate-y-1/2 -translate-x-4"
+            className="absolute z-10 left-0 top-1/2 -translate-y-1/2 translate-x-0 sm:-translate-x-4"
             aria-label="Previous"
           >
             <ChevronLeft className="w-6 h-6 text-accent-100" />
@@ -114,7 +114,7 @@ const QuickTransfer: React.FC<QuickTransferProps> = ({
                 }}
                 style={{ width: `${100 / data.length}%` }}
               >
-                <div className="w-24 h-24 rounded-full overflow-hidden mb-4">
+                <div className="w-12 h-12 sm:w-24 sm:h-24 rounded-full overflow-hidden mb-4">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -123,7 +123,7 @@ const QuickTransfer: React.FC<QuickTransferProps> = ({
                 </div>
                 <h3
                   className={cn(
-                    "text-lg text-app-black font-normal",
+                    "text-base sm:text-lg text-center text-app-black font-normal",
                     selectedMember?.id === member.id && 'font-bold',
                   )}
                 >
@@ -131,7 +131,7 @@ const QuickTransfer: React.FC<QuickTransferProps> = ({
                 </h3>
                 <p
                   className={cn(
-                    "text-sm text-accent-100 font-normal",
+                    "text-sm text-center text-accent-100 font-normal",
                     selectedMember?.id === member.id && 'font-bold',
                   )}
                 >
@@ -146,7 +146,7 @@ const QuickTransfer: React.FC<QuickTransferProps> = ({
           <IconButton
             variant='secondary'
             onClick={() => handleSlide('right')}
-            className="absolute z-10 right-0 top-1/2 -translate-y-1/2 translate-x-4"
+            className="absolute z-10 right-0 top-1/2 -translate-y-1/2 translate-x-0 sm:translate-x-4"
             aria-label="Next"
           >
             <ChevronRight className="w-6 h-6 text-accent-100" />
@@ -154,7 +154,7 @@ const QuickTransfer: React.FC<QuickTransferProps> = ({
         )}
       </div>
 
-      <div className="flex gap-8 h-14">
+      <div className="flex gap-4 sm:gap-8 h-14">
         <h3 className="text-base font-normal text-accent-100 flex items-center">
           Write Amount
         </h3>

@@ -10,9 +10,9 @@ import {
 
 const Overview: React.FC = () => {
   return (
-    <div className="flex-grow overflow-y-auto">
-      <div className="grid grid-cols-3 gap-8 mb-6">
-        <div className="col-span-2">
+    <div className="flex-grow h-full overflow-y-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-6">
+        <div className="col-span-1 xl:col-span-2">
           <CardLabel
             label="My Cards"
             action={
@@ -31,8 +31,8 @@ const Overview: React.FC = () => {
           <TransactionCardContainer />
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-8 mb-6">
-        <div className="col-span-2">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
+        <div className="col-span-1 md:col-span-2">
           <CardLabel label="Weekly Activity" />
           <Card>
             <BarChartContainer />
@@ -45,8 +45,8 @@ const Overview: React.FC = () => {
           </Card>
         </div>
       </div>
-      <div className="flex gap-8">
-        <div className="w-full max-w-xl">
+      <div className="flex flex-col md:flex-row gap-8">
+        <div className="w-full md:max-w-xl">
           <CardLabel label="Quick Transfer" />
           <Card>
             <QuickTransferContainer />

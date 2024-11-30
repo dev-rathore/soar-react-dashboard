@@ -16,9 +16,9 @@ const IconButton: React.FC<IconButtonProps> = ({
   return (
     <button
       className={cn(
-        `flex items-center justify-center rounded-full bg-accent p-3 ${className}`,
+        `flex items-center justify-center rounded-full bg-accent p-2 sm:p-3 ${className}`,
         iconColor,
-        variant === "secondary" && "w-12 h-12 bg-white rounded-full shadow-icon hover:bg-gray-50 transition-colors"
+        variant === "secondary" && "w-8 h-8 sm:w-12 sm:h-12 bg-white rounded-full shadow-icon hover:bg-gray-50 transition-colors"
       )}
       {...props}
     >
