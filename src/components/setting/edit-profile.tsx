@@ -11,6 +11,7 @@ import { User } from "../../lib/types/user";
 import pencilSrc from "../../assets/icons/pencil.svg";
 import ImageModal from "./image-modal";
 import { toast } from "react-toastify";
+import { getMaxDateForDob } from "../../lib/form/form";
 
 interface EditProfileProps {
   user: User;
@@ -183,6 +184,7 @@ const EditProfile: React.FC<EditProfileProps> = ({
                   id="dob"
                   type="date"
                   {...field}
+                  max={getMaxDateForDob()}
                 />
               )}
             />

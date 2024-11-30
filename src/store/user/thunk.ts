@@ -11,7 +11,7 @@ export const fetchUserById = createAsyncThunk(
           permanent: "San Jose, California, USA",
           city: "San Jose",
         },
-        dob: "1995-12-17T00:00:00.000Z",
+        dob: "1990-01-25",
         email: "charlenereed@gmail.com",
         id,
         name: "Charlene Reed",
