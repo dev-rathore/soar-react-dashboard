@@ -1,11 +1,12 @@
-import { EditProfile, Preferences, Security } from "../components/setting";
+import { Preferences, Security } from "../components/setting";
 import { Card, Tabs } from "../components/ui";
+import { EditProfileContainer } from "../containers/setting";
 
 const Setting: React.FC = () => {
   const tabs = [
     {
       label: "Edit Profile",
-      content: <EditProfile />,
+      content: <EditProfileContainer />,
     },
     {
       label: "Preferences",
