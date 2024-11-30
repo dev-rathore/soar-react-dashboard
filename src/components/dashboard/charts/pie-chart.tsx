@@ -4,10 +4,11 @@ import {
   Legend,
   Tooltip,
 } from 'chart.js';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 import { Pie } from 'react-chartjs-2';
 
-ChartJS.register(ArcElement, Legend, Tooltip);
+ChartJS.register(ArcElement, Legend, Tooltip, ChartDataLabels);
 
 const options = {
   responsive: true,
@@ -17,15 +18,17 @@ const options = {
     },
     datalabels: {
       display: true,
-      align: 'center',
-      backgroundColor: '#ffffff',
-      borderRadius: 3,
+      align: 'center' as const,
+      color: '#ffffff',
       font: {
-        size: 18,
+        size: 14 as const,
+        weight: 'bold' as const,
       },
-      formatter: (value: number) => {
-        return value + '%';
+      formatter: (value: number, ctx: any) => {
+        const label = ctx.chart.data.labels[ctx.dataIndex];
+        return `${value}%\n${label}`;
       },
+      textAlign: 'center' as const,
     },
   },
   layout: {

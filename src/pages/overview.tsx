@@ -13,7 +13,17 @@ const Overview: React.FC = () => {
     <div className="flex-grow overflow-y-auto">
       <div className="grid grid-cols-3 gap-8 mb-6">
         <div className="col-span-2">
-          <CardLabel label="My Cards" />
+          <CardLabel
+            label="My Cards"
+            action={
+              <button
+                className="text-lg text-app-dark font-medium"
+                onClick={() => console.log('See All')}
+              >
+                See All
+              </button>
+            }
+          />
           <CreditCardContainer />
         </div>
         <div className="col-span-1">
