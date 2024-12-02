@@ -2,6 +2,7 @@
 
 - Tech stack - React.js, Tailwind.css, Redux, React Hook Form, Chart.js.
 - Node version - 20.17.0
+- Design Patterns Used - Container & Presentational, Render Props, Custom Hooks.
 
 ## Commands to run locally
 
